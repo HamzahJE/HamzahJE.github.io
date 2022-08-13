@@ -2,15 +2,14 @@
 *{
     font-family: Comfortaa;
     font-size: 10pt;
-    color: #edf0f1;
     padding: 0;
     margin: 0;
 }
 body{
     min-height: 100vh;
-    /* background: #00416a; 
+    background: #00416a; 
     background: -webkit-linear-gradient(to right, rgb(0,45,74), rgb(35,35,39)); 
-    background: linear-gradient(to right, rgb(0,45,74), rgb(35,35,39)); */
+    background: linear-gradient(to right, rgb(0,45,74), rgb(35,35,39));
 }
 li , button ,a ,ul {
     text-decoration: none;
@@ -24,31 +23,15 @@ li , button ,a ,ul {
 }
 
 header {
-    /* position: fixed; */
-    /* height: 100vh; */
-    /* width: 10%; */
+    border-bottom:2px dashed #00416a ;
+    /* position: fixed; 
+    height: 100vh;
+    width: 10%; */
     margin-left: 100px;
 }
 a{
     display: inline-block;
 }
-.container{
-width: 100%;
-padding-right: var(--bs-gutter-x,.75rem);
-padding-left: var(--bs-gutter-x,.75rem);
-margin-right: auto;
-margin-left: 0;
-}
-h2 {
-    display: block;
-    font-size: 1.5em;
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-}
-
 #logo{
     vertical-align: auto;
     transition: all 0.3s ease 0s;
@@ -61,35 +44,10 @@ h2 {
     font-size: 16pt;
 }
 
-#navbar{
-    color: #edf0f1;
-
-    padding-top: 5px;
-    margin-top: 10px;
-}
-#navbar li{
-    display: inline-block;
-    padding: 5px 0px;
-}
-#navbar a li{
-    transition: all 0.3s ease 0s;
-}
-
-#navbar li  a:hover{
-    color:#0088a9;
-    cursor: pointer;
-}
-
-#name{
+.name{
     transition: all 0.3s ease 0s;
     font-family: Monoton;
     color: #edf0f1;
     font-weight: 400;
     font-size: 16pt;
 }
-
-#intro-body{
-    margin-top: 10px;
-    display: flex;
-}
-
