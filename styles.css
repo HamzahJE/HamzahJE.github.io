@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Monoton&family=Nothing+You+Could+Do&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Monoton&family=Nothing+You+Could+Do&display=swap');
 :root {
   --color-primary: #101f1f;
   --color-secondary: #27AE60;
+  --color-vanta: #89964e;
+  --color-vanta-lite: #c5e050;
   --color-white: #FFFFFF;
   --color-black: #000;
   --color-grey0: #f8f8f8;
@@ -29,7 +31,8 @@ p{
   background-color: var(--color-primary);  
   display: flex; 
   min-height: 100vh;
-  width: 100%;
+  justify-content: space-around;
+  max-width: 75%;
 }
 #about{
   display: none;
@@ -37,11 +40,17 @@ p{
   background-color: var(--color-primary);  
   display: flex; 
   min-height: 100vh;
-  width: 100vw;
+  max-width: 80vw;
   transition: all 0.4s ease-in-out;
   flex-direction: column;
   padding-left: 4rem;
   padding-right: 4rem;
+
+}
+
+#nav{
+  display: flex; 
+  flex-direction: column;
 
 }
 body {
@@ -60,7 +69,7 @@ svg{
 svg:hover{
   border-radius: 30%;
   padding: 2px;
-  background-color: #89964e;
+  background-color: var(--color-vanta);
 }
 a {
   display: inline-block;
@@ -98,10 +107,25 @@ section {
   width: 100%;
   height: inherit;
 }
+#nav_strip{
+  font-family:'Nothing You Could Do';
+
+}
 header{
   display: flex;
   height: 100vh;
   width: 100%;
+}
+header nav a #navbarSpan{
+  font-size: inherit;
+  font: inherit;
+  color: var(--color-vanta-lite);
+  font-weight: 300;
+}
+header #logo #logoSpan{
+  font-size: inherit;
+  font: inherit; 
+   color: var(--color-vanta-lite);
 }
 
 .navbar-brand{
@@ -113,6 +137,7 @@ header{
   top: 30%;
   height: inherit;
   display: flex;
+  justify-content: center;
   text-align: center;
   flex-direction: column;
   max-width: 100%;
@@ -120,17 +145,20 @@ header{
 #logo{
     transition: all 0.3s ease 0s;
     font-family: Monoton;
-    font-size: 45pt;
+    font-size: 6rem;
     color: #edf0f1;
     font-weight: 400;
 }
 #description{
     align-items: center;
-    font-size: 20pt;
+    font-size: 2.5rem;
     width: 100%;
+    font-family: 'Nothing You Could Do';
+
 }
 #navbar{
-    flex-direction: row;
+  font-family: 'Nothing You Could Do';
+  flex-direction: row;
     justify-content: center;
     
 }
@@ -144,7 +172,10 @@ header{
 }
 #nav-link:hover{
     cursor: pointer;
-    color: #89964e;
+    color: var(--color-vanta);
+}
+#navbar-brand{
+font-size: 1.6rem;
 }
 
 
@@ -156,8 +187,8 @@ header{
   padding-bottom: 5rem;
 }
 .about-container .left-about p span{
-font: inherit;
-font-size: inherit;
+font-family: 'Nothing You Could Do';
+font-size: 2em;
 color: var(--color-secondary);
 }
 
@@ -295,6 +326,7 @@ color: var(--color-secondary);
 }
 
 .stat-title {
+  font-family: 'Nothing You Could Do';
   text-transform: uppercase;
   font-size: 1.4rem;
   text-align: center;
@@ -369,15 +401,16 @@ color: var(--color-secondary);
 }
 
 .port-text {
-  /* padding: 1rem 0; */
+  padding: 4rem 0;
   text-align: center;
 }
 
 .portfolios {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2rem;
+  grid-gap: 6rem;
   margin-top: 3rem;
+
 }
 .portfolios .portfolio-item {
   position: relative;
@@ -640,6 +673,7 @@ color: var(--color-secondary);
 
 .main-title {
   text-align: center;
+
 }
 .main-title h2 {
   z-index: 1;
@@ -647,8 +681,11 @@ color: var(--color-secondary);
   text-transform: uppercase;
   font-size: 4rem;
   font-weight: 700;
+  font-family: 'Nothing You Could Do';
+
 }
 .main-title h2 span {
+  font-family: 'Nothing You Could Do';
   color: var(--color-secondary);
   font-size: inherit;
 }
@@ -656,6 +693,7 @@ color: var(--color-secondary);
   position: absolute;
   top: 50%;
   left: 50%;
+  font-family: 'Nothing You Could Do';
   color: var(--color-grey-5);
   transition: all 0.4s ease-in-out;
   z-index: -1;
@@ -669,9 +707,10 @@ color: var(--color-secondary);
 }
 /*  */
 
-@media screen and (max-width: 600px) {
+
+@media screen and (max-width: 425px) {
   header {
-    padding: 0 !important;
+    display: none;
   }
 
   .theme-btn {
@@ -679,31 +718,130 @@ color: var(--color-secondary);
     height: 50px;
   }
 
-  .header-content {
+  
+
+  .controls {
+    top: auto;
+    bottom: 0;
+    flex-direction: row;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    background-color: var(--color-grey-5);
+  }
+  .controls .control {
+    margin: 1rem 0.3rem;
+  }
+
+  .about-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .about-container .right-about {
+    grid-template-columns: repeat(1, 1fr);
+    padding-top: 2.5rem;
+  }
+  .about-container .left-about {
+    padding-right: 0;
+  }
+  .about-container .left-about p {
+    padding-left: 0;
+  }
+
+  .timeline {
     grid-template-columns: repeat(1, 1fr);
     padding-bottom: 6rem;
   }
 
-  .left-header .h-shape {
+  .container {
+    padding: 2rem 2.5rem !important;
+  }
+
+  .about-stats .progress-bars {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .portfolios {
+    grid-template-columns: repeat(1, 1fr);
+    padding-bottom: 6rem;
+    margin-top: 1rem;
+  }
+
+  .blogs {
+    grid-template-columns: repeat(1, 1fr);
+    padding-bottom: 6rem;
+  }
+
+  .contact-content-con {
+    flex-direction: column;
+  }
+  .contact-content-con .right-contact {
+    margin-left: 0;
+    margin-top: 2.5rem;
+  }
+
+  .contact-content-con .right-contact .i-c-2 {
+    flex-direction: column;
+  }
+
+  .contact-content-con .right-contact .i-c-2 :last-child {
+    margin-left: 0;
+    margin-top: 1.5rem;
+  }
+
+  .contact-content-con .right-contact {
+    margin-bottom: 6rem;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    margin: 1rem 0;
+  }
+  .contact-item p {
+    font-size: 15px;
+    color: var(--color-grey-2);
+  }
+  .contact-item span {
+    font-size: 15px;
+  }
+  .contact-item .icon {
+    grid-template-columns: 25px 1fr;
+  }
+
+  .main-title h2 {
+    font-size: 2rem;
+  }
+  .main-title h2 span {
+    font-size: 2.3rem;
+  }
+  .main-title h2 .bg-text {
+    font-size: 2.3rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  header {
+    padding: 0 !important;
+  }
+   header #logo{
+    display:flex;
+    padding: 0!important;
+    font-size:2rem !important;
+    justify-content: space-evenly;
+    
+  }
+  header #logo span a svg{
     display: none;
   }
-
-  .right-header {
-    grid-row: 1;
-    padding-right: 0rem !important;
-    width: 90%;
-    margin: 0 auto;
-  }
-  .right-header .name {
-    font-size: 2.5rem !important;
-    text-align: center;
-    padding-top: 3rem;
+  header #description{
+  display: none;
   }
 
-  .header-content .left-header .image {
-    margin: 0 auto;
-    width: 90%;
+  .theme-btn {
+    width: 50px;
+    height: 50px;
   }
+
+  
 
   .controls {
     top: auto;
@@ -804,6 +942,18 @@ color: var(--color-secondary);
   }
 }
 @media screen and (max-width: 1432px) {
+  #logo{
+    display:flex;
+    padding: 2rem 2.5rem !important;
+    font-size: 3.5rem !important;
+    justify-content: space-evenly;
+  }
+  #description{
+    display:flex;
+    padding: 0 !important;
+    font-size: 1.5rem !important;
+    justify-content: space-evenly;
+  }
   .container {
     padding: 7rem 11rem;
   }
@@ -873,6 +1023,7 @@ color: var(--color-secondary);
   .main-title h2 .bg-text {
     font-size: 4.5rem;
   }
+  
 }
 @media screen and (max-width: 970px) {
   .container {
@@ -934,7 +1085,7 @@ color: var(--color-secondary);
   .main-title h2 .bg-text {
     font-size: 4rem;
   }
-} */
+} 
 
 /* 
 .active {
@@ -951,7 +1102,7 @@ color: var(--color-secondary);
   }
 }
 
-/* .controls {
+/* \.controls {
   position: fixed;
   z-index: 10;
   top: 50%;
