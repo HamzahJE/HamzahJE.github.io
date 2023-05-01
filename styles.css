@@ -73,7 +73,7 @@ svg:hover{
 }
 a {
   display: inline-block;
-  text-decoration: none;
+  /* text-decoration: none; */
   color: inherit;
   font-family: inherit;
 }
@@ -159,8 +159,7 @@ header #logo #logoSpan{
 #navbar{
   font-family: 'Nothing You Could Do';
   flex-direction: row;
-    justify-content: center;
-    
+  justify-content: center;
 }
 #nav{
     width: 100%;
@@ -169,6 +168,7 @@ header #logo #logoSpan{
 #nav-link{
     transition: all 0.3s ease 0s;
     color: #edf0f1;
+    font-size: 1.5rem;
 }
 #nav-link:hover{
     cursor: pointer;
@@ -728,7 +728,7 @@ color: var(--color-secondary);
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    background-color: var(--color-grey-5);
+    /* background-color: var(--color-grey-5); */
   }
   .controls .control {
     margin: 1rem 0.3rem;
@@ -851,7 +851,7 @@ color: var(--color-secondary);
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    background-color: var(--color-grey-5);
+    /* background-color: var(--color-grey-5); */
   }
   .controls .control {
     margin: 1rem 0.3rem;
@@ -1093,16 +1093,17 @@ color: var(--color-secondary);
   animation: appear 1s ease-in-out;
   transform: translateY(0) scaleY(1);
 } 
-@keyframes appear {
+@keyframes appear {    /* background-color: var(--color-grey-5);
   0% {
     transform: translateY(-100%) scaleY(0);
   }
   100% {
     transform: translateY(0) scaleY(1);
   }
-}
+}  */
 
-/* \.controls {
+
+.controls {
   position: fixed;
   z-index: 10;
   top: 50%;
@@ -1126,16 +1127,15 @@ color: var(--color-secondary);
   margin: 0.7rem 0;
   box-shadow: var(--box-shadow-1);
 }
-.controls .control i {
+.controls .control a {
   font-size: 1.2rem;
+  text-decoration: none ;
   color: var(--color-grey-2);
-  pointer-events: none;
 }
 .controls .active-btn {
   background-color: var(--color-secondary);
   transition: all 0.4s ease-in-out;
 }
-.controls .active-btn i {
+.controls .active-btn a {
   color: var(--color-white);
-}
- */
+} 
